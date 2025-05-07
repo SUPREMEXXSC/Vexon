@@ -9,7 +9,7 @@
       margin: 0;
       height: 100vh;
       background: #000;
-      background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAAB...'); /* background logo image (shortened) */
+      background-image: url('data:image/jpeg;base64,/9j/...'); /* your background base64 here */
       background-size: cover;
       background-position: center;
       overflow: hidden;
@@ -89,7 +89,6 @@
       });
     }
 
-    // Logo particle image
     const logoImg = new Image();
     logoImg.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfMAAAHzCAYAAAA0D/RLAAEAAElEQVR4nOy9d5hlWVmo/66w0wkVuzrnODnPwIBIULxX5aoEJSpRyZjAhKggGDAiJkTFiOEK3nt/Nxm4KBkGmNw93TPTOVeuk3ZYa32/P3Z1zwDDiNg90z1z3uepZ9c5p+rsvVfY3/q+9QXFkCFDHlWezbdL26SMJCNMtaZYN76GtWNrmGhNsKIxiQoGJRalDAqDUgpRCi0GEyxaFCICgIic/R0ghPBVzxsUy98FohQASi9/qOvX/byHUgpM";
 
@@ -112,8 +111,8 @@
       reset() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.vx = (Math.random() - 0.5) * 0.4;
-        this.vy = (Math.random() - 0.5) * 0.4;
+        this.vx = (Math.random() - 0.5) * 0.3;
+        this.vy = (Math.random() - 0.5) * 0.3;
         this.size = Math.random() * 20 + 10;
       }
 
@@ -146,7 +145,7 @@
       requestAnimationFrame(animate);
     }
 
-    animate();
+    logoImg.onload = animate;
   </script>
 </body>
 </html>
